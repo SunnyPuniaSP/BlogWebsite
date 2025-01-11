@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { Input, Button, Select, RTE } from './index';
 
 function Postform({ post }) {
-    const { register, handleSubmit, watch, setValue, control, reset } = useForm();
+    const { register, handleSubmit, watch, setValue, control, reset,getValues } = useForm();
     const navigate = useNavigate();
     const userdata = useSelector((state) => state.auth.userData);
     const [error, setError] = useState();
@@ -98,7 +98,7 @@ function Postform({ post }) {
                     label="Content"
                     name="content"
                     control={control}
-                    defaultvalue={post?.content || ''}
+                    defaultvalue={getValues('content')}
                 />
             </div>
             <div className="w-1/3">
