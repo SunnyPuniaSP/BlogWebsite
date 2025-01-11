@@ -7,10 +7,10 @@ function AllPosts(){
         service.getPosts().then((posts)=>{if(posts)setPosts(posts.documents)})
     },[])
     return(
-        <div className="flex flex-wrap h-screen w-full ml-2 my-2">
+        <div className="flex flex-wrap my-2 min-h-screen w-full">
             {posts.map((post)=>{
                 return (
-                    <div className="w-1/4" key={post.$id}>
+                    <div className="w-1/4 my-2" key={post.$id}>
                     <Postcard {...post}/>
                 </div>
                 )
