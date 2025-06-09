@@ -10,7 +10,7 @@ function LogoutBtn(){
         authService.logout().then(dispatch(logout()))
     }
     return (
-        <button onClick={logouthandler} className="bg-red-500 rounded-lg px-2 py-2">Logout</button>
+        <button onClick={logouthandler} className="bg-red-400 rounded-lg px-2 py-2">Logout</button>
     )
 }
 
