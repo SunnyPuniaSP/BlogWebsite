@@ -35,7 +35,7 @@ function Header(){
                 {
                     navItems.map((item)=>{
                         if(item.active){
-                            return (<Button key={item.name} onClick={()=>navigate(item.slug)} className={`mr-5 ${colors.btnBgColor}  rounded-lg px-2 py-2`} textColor={colors.btnTextColor} >{item.name}</Button>)
+                            return (<Button key={item.name} onClick={()=>navigate(item.slug)} className={`mr-5 rounded-lg px-2 py-2`} bgColor={colors.btnBgColor} textColor={colors.btnTextColor} >{item.name}</Button>)
                         }
                     })
                 }
