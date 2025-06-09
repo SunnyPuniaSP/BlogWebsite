@@ -1,7 +1,7 @@
 import service from "../appwrite/config";
 import { useSelector } from "react-redux";
 import { useState,useEffect } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Button } from "../components";
 import parse from 'html-react-parser'
@@ -27,7 +27,7 @@ function Post(){
         })
     }
     return(
-        <div className="w-full h-screen py-8 px-4 ">
+        <div className="w-full py-8 px-4 ">
            <div className="mr-5 flex justify-center">
            {post.featuredImage && ( 
                 <div className="border-4 p-2 border-blue-600 rounded-2xl max-w-screen-md ">

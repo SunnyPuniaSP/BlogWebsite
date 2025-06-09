@@ -12,16 +12,6 @@ function Header(){
             active:authstatus
         },
         {
-            name:"Login",
-            slug:"/login",
-            active:!authstatus
-        },
-        {
-            name:"Sign-Up",
-            slug:"/signup",
-            active:!authstatus
-        },
-        {
             name:"Add-Post",
             slug:"/addpost",
             active:authstatus
@@ -29,7 +19,7 @@ function Header(){
     ]
     return (
         <>
-            <div className={`flex justify-between px-2 py-2 mb-2  w-full ${colors.barColor}`}>
+            <div className={`flex justify-between px-2 py-2  w-full ${colors.barColor}`}>
                 <div className="h-10 w-10"><Logo/></div>
                 <div className="flex flex-wrap">
                 {

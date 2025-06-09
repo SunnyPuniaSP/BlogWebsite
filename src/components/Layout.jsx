@@ -4,7 +4,7 @@ import Footer from './Footer'
 import colors from './Theme'
 function Layout(){
     return (
-        <div className={`flex-col min-h-screen ${colors.bgColor} `}>
+        <div className={`flex flex-col min-h-screen ${colors.bgColor} `}>
             <Header/>
             <Outlet/>
             <Footer/>
