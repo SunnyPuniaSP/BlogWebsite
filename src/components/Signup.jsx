@@ -56,7 +56,7 @@ export const Signup = () => {
             label="Full Name"
             type="text"
             placeholder="Full Name"
-            className="w-full outline-none px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500"
+            className="w-full outline-none px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black"
             {...register("name", { required: true })}
           />
 
@@ -64,7 +64,7 @@ export const Signup = () => {
             label="Email"
             type="email"
             placeholder="Enter your email"
-            className="w-full outline-none px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500"
+            className="w-full outline-none px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black"
             {...register("email", {
               required: true,
               validate: {
@@ -78,7 +78,7 @@ export const Signup = () => {
             label="Password"
             type="password"
             placeholder="Password"
-            className="w-full outline-none px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500"
+            className="w-full outline-none px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black"
             {...register("password", { required: true })}
           />
 
