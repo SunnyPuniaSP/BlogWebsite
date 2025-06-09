@@ -27,18 +27,18 @@ function Post(){
         })
     }
     return(
-        <div className="max-w-3xl mx-auto px-4 py-10 bg-gray-50 rounded-xl shadow-sm">
-           <div className="mr-5 flex justify-center">
+        <div className="max-w-3xl my-auto mx-auto px-4 py-10 bg-gray-50 rounded-xl shadow-md">
+           <div className=" flex justify-center">
            {post.featuredImage && ( 
-                 <img className="w-full rounded-xl border-2 border-blue-500 shadow-md mx-auto" src={service.getFilePreview(post.featuredImage)} alt="Post Featured" />
+                 <img className="w-full rounded-xl border-[4px] border-black shadow-md mx-auto" src={service.getFilePreview(post.featuredImage)} alt="Post Featured" />
             )}
            </div>
             {auth && (
                 <div className="absolute top-20 right-10">
                     <Link to={`/edit-post/${post.$id}`}>
-                        <Button bgColor="bg-green-500" textColor="text-white" className=" rounded-xl py-2 px-2 mx-2 w-20 ">Edit</Button>
+                        <Button bgColor="bg-yellow-500" textColor="text-white" className=" rounded-xl py-2 px-2 mx-2 w-20 hover:bg-yellow-600">Edit</Button>
                     </Link>
-                    <Button bgColor="bg-red-500" textColor="text-white" className=" rounded-xl py-2 px-2 mx-2 w-20" onClick={deletePost} >Delete</Button>
+                    <Button bgColor="bg-red-500" textColor="text-white" className=" rounded-xl py-2 px-2 mx-2 w-20 hover:bg-red-600" onClick={deletePost} >Delete</Button>
                 </div>
             )}
             <div className="">
