@@ -1,66 +1,76 @@
-import {Logo,Button,Input} from './index'
-import authService from '../appwrite/auth'
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import { login } from '../store/authSlice'
-import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
-export const Login=()=>{
-    const dispatch=useDispatch();
-    const navigate=useNavigate();
-    const {register,handleSubmit}=useForm();
-    const [error,setError]=useState("");
-    const loginacc=async(data)=>{
+import { Logo, Button, Input } from './index';
+import authService from '../appwrite/auth';
+import { useNavigate, Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { login } from '../store/authSlice';
+
+export const Login = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { register, handleSubmit } = useForm();
+    const [error, setError] = useState("");
+
+    const loginacc = async (data) => {
         setError("");
         try {
-            const session=await authService.login({...data});
-            if(session){
-                const userData=await authService.getCurrentUser();
-                if(userData)dispatch(login(userData));
+            const session = await authService.login({ ...data });
+            if (session) {
+                const userData = await authService.getCurrentUser();
+                if (userData) dispatch(login(userData));
                 navigate('/');
-            }
-            else{
-                console.log("not created session===");
             }
         } catch (error) {
             setError(error.message);
         }
-    }
-    return(
-        <div className='h-screen w-full flex justify-center'>
-            <div className='border-4  bg-green-200 h-72 px-5 py-5'>
-                <div className='flex justify-center'>
-                    <div className='w-10 h-10'>
-                        <Logo/>
+    };
+
+    return (
+        <div className="flex flex-1 items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 px-4">
+            <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
+                <div className="flex justify-center mb-4">
+                    <div className="w-12 h-12">
+                        <Logo />
                     </div>
-                </div>
-                <div className='flex justify-center'>
-                    <div>
-                        <h2 className='flex justify-center'>Sign In to your Account</h2>
-                        <p>Do not have an Account. Please Sign UP
-                        <Link to={"/signup"} className='mx-2 text-blue-600 font-bold' >Sign Up</Link></p>
-                    </div>
-                </div>
-                <div className=''>{error && <p>There is an error for your Login: {error}</p>}</div>
-                <div className=''>
-                    <form onSubmit={handleSubmit(loginacc)}>
-                        <Input label={"Email: "} type={"email"} placeholder="Enter Your Email" className="w-3/5" {...register("email",{
-                            required:true,
-                            // validate: {
-                            //     matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                            //     "Email address must be a valid address",
-                            // }
-                        })}/>
-                        <Input label={"Password: "} type={"password"} placeholder="Enter Your Password" className="w-3/5" {...register("password",{
-                            required:true
-                        })}/>
-                        <div className='flex justify-center my-4'><Button type='submit' className='py-2 px-2 w-40 rounded-2xl'>Login</Button></div>
-                    </form>
                 </div>
 
+                <h2 className="text-2xl font-semibold text-center text-gray-800 mb-1">Sign In to Your Account</h2>
+                <p className="text-center text-sm text-gray-500 mb-5">
+                    Don't have an account?
+                    <Link to="/signup" className="ml-1 text-blue-600 font-medium hover:underline">Sign Up</Link>
+                </p>
+
+                {error && (
+                    <div className="bg-red-100 text-red-700 text-sm p-3 rounded mb-4">
+                        ⚠️ {error}
+                    </div>
+                )}
+
+                <form onSubmit={handleSubmit(loginacc)} className="space-y-4">
+                    <Input
+                        label="Email"
+                        type="email"
+                        placeholder="Enter your email"
+                        className="w-full outline-none px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                        {...register("email", { required: true })}
+                    />
+
+                    <Input
+                        label="Password"
+                        type="password"
+                        placeholder="Enter your password"
+                        className="w-full outline-none px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+                        {...register("password", { required: true })}
+                    />
+
+                    <div className="flex justify-center">
+                        <Button type="submit" bgColor='bg-black' textColor='text-white' className="w-full py-2 rounded-xl  hover:bg-gray-800  font-semibold">
+                            Login
+                        </Button>
+                    </div>
+                </form>
             </div>
         </div>
-    )
-}
-
+    );
+};

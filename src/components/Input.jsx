@@ -8,10 +8,10 @@ const Input=React.forwardRef(function Input({
 },ref){
     return (
         <div className="my-2">
-            {label && <label className="text-xl">{label}</label>}
+            {label && <label className="block mb-1 text-gray-700 font-medium">{label}</label>}
             <input 
                 type={type}
-                className={`${className} border-2 mx-2 border-gray-700 `}
+                className={`${className}`}
                 {...props}
                 ref={ref}
             ></input>

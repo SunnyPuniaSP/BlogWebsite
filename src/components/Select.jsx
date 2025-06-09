@@ -9,7 +9,7 @@ function Select({
     return(
         <div className="px-2">
             {label && <label className="text-xl">{label}</label> }
-            <select className={`${className} border-2 border-gray-500 w-44 mx-2`} {...props} ref={ref} defaultValue={"active"}>
+            <select className={`${className}`} {...props} ref={ref} defaultValue={"active"}>
                 {
                     options &&
                     options.map((option)=>(

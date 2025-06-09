@@ -1,7 +1,7 @@
 import {Signup as SignupComponent} from '../components/Signup'
 function Signup(){
     return (
-        <div>
+        <div className='flex flex-1'> 
             <SignupComponent/>
         </div>
     )

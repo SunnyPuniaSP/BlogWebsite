@@ -5,12 +5,12 @@ import colors from "./Theme"
 function Postcard({$id,title,featuredImage}){
     return(
         <Link to={`/post/${$id}`}>
-            <div className={`border-4 p-4 ${colors.cardBorderColor} rounded-xl ${colors.cardBgColor} mx-2 flex-col justify-between`}>
+            <div className={`${colors.cardBorderColor} ${colors.cardBgColor} mx-3 flex-col justify-between hover:scale-105 transform transition-transform duration-300 ease-in-out rounded-xl shadow hover:shadow-lg p-4 border`}>
                 <div className="flex justify-center">
-                    <img src={service.getFilePreview(featuredImage)} className="rounded-xl max-w-72 max-h-28" alt="" />
+                    <img src={service.getFilePreview(featuredImage)} className=" w-full h-40 object-cover rounded-lg mb-4" alt="" />
                 </div>
                 <div className="flex justify-center my-2">
-                    <h1 className={`text-2xl bold  ${colors.cardTitleColor}`}>{title}</h1>
+                    <h1 className={`font-semibold text-lg text-center  ${colors.cardTitleColor}`}>{title}</h1>
                 </div>
             </div>
         </Link>

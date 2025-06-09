@@ -27,25 +27,23 @@ function Post(){
         })
     }
     return(
-        <div className="w-full py-8 px-4 ">
+        <div className="max-w-3xl mx-auto px-4 py-10 bg-gray-50 rounded-xl shadow-sm">
            <div className="mr-5 flex justify-center">
            {post.featuredImage && ( 
-                <div className="border-4 p-2 border-blue-600 rounded-2xl max-w-screen-md ">
-                    <img className="rounded-3xl max-h-96 max-w-screen-md" src={service.getFilePreview(post.featuredImage)} alt="Post Featured" />
-                </div>
+                 <img className="w-full rounded-xl border-2 border-blue-500 shadow-md mx-auto" src={service.getFilePreview(post.featuredImage)} alt="Post Featured" />
             )}
            </div>
             {auth && (
                 <div className="absolute top-20 right-10">
                     <Link to={`/edit-post/${post.$id}`}>
-                        <Button className="bg-green-500 rounded-xl py-2 px-2 mx-2 w-20">Edit</Button>
+                        <Button bgColor="bg-green-500" textColor="text-white" className=" rounded-xl py-2 px-2 mx-2 w-20 ">Edit</Button>
                     </Link>
-                    <Button className="bg-red-500 rounded-xl py-2 px-2 mx-2 w-20" onClick={deletePost} >Delete</Button>
+                    <Button bgColor="bg-red-500" textColor="text-white" className=" rounded-xl py-2 px-2 mx-2 w-20" onClick={deletePost} >Delete</Button>
                 </div>
             )}
             <div className="">
-                <h1 className="text-2xl font-bold w-full flex justify-center mt-4">{post.title}</h1>
-                {post.content && <p className="mt-4">{parse(post.content)}</p>}
+                <h1 className=" text-3xl font-bold text-gray-800 text-center mt-6">{post.title}</h1>
+                {post.content && <p className="text-lg text-gray-700 mt-4 leading-relaxed text-justify">{parse(post.content)}</p>}
             </div>
         </div>
     )

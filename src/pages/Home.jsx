@@ -14,8 +14,8 @@ function Home(){
             <div className={`  bg-cover w-[500px] h-[300px] rounded-lg`} style={{ backgroundImage: `url(${loginimg})` }}>
             </div> 
             <div className="flex gap-5">
-                <Button className="px-5 py-3 min-w-[200px] rounded-xl" onClick={()=>{navigate("/login")}} bgColor="bg-black">Login</Button>
-                <Button className="px-5 py-3 min-w-[200px] rounded-xl" onClick={()=>{navigate("/signup")}} bgColor="bg-black">SignUp</Button>
+                <Button className="px-5 py-3 min-w-[200px] rounded-xl hover:bg-gray-800 transition duration-300" onClick={()=>{navigate("/login")}} bgColor="bg-black" textColor="text-white">Login</Button>
+                <Button className="px-5 py-3 min-w-[200px] rounded-xl hover:bg-gray-800 transition duration-300" onClick={()=>{navigate("/signup")}} bgColor="bg-black" textColor="text-white">SignUp</Button>
             </div>
         </div>
     )

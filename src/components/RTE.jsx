@@ -2,9 +2,10 @@ import {Editor} from '@tinymce/tinymce-react'
 import { Controller } from 'react-hook-form'
 export default function RTE({name,control,defaultvalue,label}){
     return (
-        <div className='h-screen w-auto mx-2 my-4'>
-            <div className='flex justify-center'>{label && <label className='text-xl '>{label}</label>}</div>
-            <Controller 
+        <div className='mb-6'>
+            {label && <label className='block mb-2 text-gray-700 font-medium '>{label}</label>}
+            <div className='rounded-md border border-gray-300 overflow-hidden shadow-sm'>
+                <Controller 
                 name={name}
                 control={control}
                 render={({field:{onChange}})=>(
@@ -25,6 +26,7 @@ export default function RTE({name,control,defaultvalue,label}){
                     />
                 )}
             />
+            </div>
         </div>
     )
 }

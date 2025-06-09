@@ -8,7 +8,7 @@ function Button({
     ...props
 }){
     return (
-        <button className={`${bgColor} ${textColor} ${className}`} type={type} {...props}>{children}</button>
+        <button className={`${bgColor} ${textColor} ${className} `} type={type} {...props}>{children}</button>
     )
 }
 

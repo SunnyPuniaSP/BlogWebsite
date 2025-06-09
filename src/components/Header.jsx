@@ -9,23 +9,29 @@ function Header(){
         {
             name:"Home",
             slug:"/",
-            active:authstatus
+            active:authstatus,
+            bgcolor:"bg-blue-600",
+            textcolor:"text-white",
+            hover:"hover:bg-blue-700"
         },
         {
             name:"Add-Post",
             slug:"/addpost",
-            active:authstatus
+            active:authstatus,
+            bgcolor:"bg-gray-200",
+            textcolor:"text-gray-800",
+            hover:"hover:bg-gray-300"
         }
     ]
     return (
         <>
-            <div className={`flex justify-between px-2 py-2  w-full ${colors.barColor}`}>
+            <div className={`flex sticky top-0 z-50 shadow-md justify-between px-6 py-4  w-full ${colors.barColor}`}>
                 <div className="h-10 w-10"><Logo/></div>
                 <div className="flex flex-wrap">
                 {
                     navItems.map((item)=>{
                         if(item.active){
-                            return (<Button key={item.name} onClick={()=>navigate(item.slug)} className={`mr-5 rounded-lg px-2 py-2`} bgColor={colors.btnBgColor} textColor={colors.btnTextColor} >{item.name}</Button>)
+                            return (<Button key={item.name} onClick={()=>navigate(item.slug)} className={`mr-5 px-4 py-2 rounded-md font-medium transition  ${item.hover}`} bgColor={item.bgcolor} textColor={item.textcolor} >{item.name}</Button>)
                         }
                     })
                 }

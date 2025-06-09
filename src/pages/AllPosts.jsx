@@ -12,7 +12,7 @@ function AllPosts(){
                 return (
                     <div className="w-1/4 my-2" key={post.$id}>
                     <Postcard {...post}/>
-                </div>
+                    </div>
                 )
             })}
         </div>
