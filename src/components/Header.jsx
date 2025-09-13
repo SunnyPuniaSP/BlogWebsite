@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
-import {Button, Logo,LogoutBtn} from './index'
+import {Button,LogoutBtn} from './index'
+import logo from "../assets/LOGO.png";
 import { useNavigate } from "react-router-dom";
 import colors from "./Theme"
 function Header(){
@@ -25,8 +26,8 @@ function Header(){
     ]
     return (
         <>
-            <div className={`flex sticky top-0 z-50 shadow-md justify-between px-6 py-4  w-full ${colors.barColor}`}>
-                <div className="h-10 w-10"><Logo/></div>
+            <div className={`flex sticky top-0 z-50 shadow-md justify-between px-6 py-3  w-full ${colors.barColor}`}>
+                <img src={logo} alt="Logo" className="h-10 w-40" />
                 <div className="flex flex-wrap">
                 {
                     navItems.map((item)=>{
