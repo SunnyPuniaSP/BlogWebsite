@@ -32,7 +32,7 @@ export const Signup = () => {
     <div className="flex flex-1 items-center justify-center bg-gradient-to-br from-green-400 to-blue-600 px-4">
       <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
         <div className="flex justify-center mb-4">
-          <div className="w-12 h-12">
+          <div className="">
             <Logo />
           </div>
         </div>

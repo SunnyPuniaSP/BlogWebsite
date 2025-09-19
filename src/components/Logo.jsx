@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+import logo from "../assets/LOGO.png";
 function Logo(){
     return (
-        <div className=""><img src="https://www.freeiconspng.com/uploads/blogger-logo-icon-png-12.png" alt="" /></div>
+        <div className=""><img src={logo} alt="Logo" className="h-10 w-40" /></div>
     )
 }
 
